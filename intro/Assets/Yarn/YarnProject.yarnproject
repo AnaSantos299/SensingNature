@@ -1,0 +1,16 @@
+{
+  "projectFileVersion": 2,
+  "sourceFiles": [
+    "**/*.yarn"
+  ],
+  "excludeFiles": [
+    "**/*~/*"
+  ],
+  "localisation": {
+    "pt": {
+      "assets": "${UnityProjectRoot}/Assets/Audio_PT"
+    }
+  },
+  "baseLanguage": "pt",
+  "compilerOptions": {}
+}

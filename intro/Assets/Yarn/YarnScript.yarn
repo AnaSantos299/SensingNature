@@ -1,0 +1,237 @@
+﻿title: Start
+position: 351,-571
+---
+<<showBigLogo GameManager>>
+<<hideBlueOrb GameManager>>
+<<hideSmallLogo GameManager>>
+<<hideMultipleButtons GameManager>>
+<<hideCallButtons GameManager>>
+<<animationBackgroundStop GameManager>>
+<<changebackground GameManager Earth 1 >>
+<<playSound GameManager smartphone true>>
+Alguém está a ligar. #line:line_1 
+<<hideBigLogo GameManager>>
+<<showSmallLogo GameManager>>
+<<changebackground GameManager Blur 1 >>
+<b>Atende a chamada</b>. Parece urgente! #line:line_2 
+<<showCallButtons GameManager>>
+===
+
+title: rejectCall
+position: -46,-652
+---
+<<hideCallButtons GameManager>>
+<<stopSound GameManager>>
+<<changebackground GameManager Blur 2 >>
+Oh não! Não vamos conseguir salvar o planeta! Tenta outra vez... #line:line_3 
+<<jump Start>>
+===
+
+title: acceptCall
+position: 352,-445
+---
+<<hideCallButtons GameManager>>
+<<stopSound GameManager>>
+Está aí alguém? Olá? Preciso de ajuda... o meu nome é Lourenço... estou numa nave... ano 2234... estamos a ficar sem recursos!<br> Ajuda-me, é urgente! #line:line_4 
+<<changebackground GameManager NoWifi 1 >>
+<<showMultipleButtons GameManager>>
+A chamada caiu.... Mas arranjei outra forma de comunicar contigo! #line:line_5 
+<<hideMultipleButtons GameManager>>
+<<changebackground GameManager SingleShip 1 >>
+Eu vivo numa nave no espaço, juntamente com centenas de sobreviventes. #line:line_6 
+<<changebackground GameManager MultipleShips 1 >>
+A minha nave é a Nomad 5817, mas existem outras naves iguais à minha. #line:line_7 
+<<showBlueOrb GameManager>>
+-> Mas para que precisas da minha ajuda? #line:06f25ad 
+    <<jump leftAnswerFirstDecision>>
+-> Sobreviventes? O que aconteceu? #line:08587fd 
+    <<jump rightAnswerFirstDecision>>
+===
+
+
+title: leftAnswerFirstDecision
+position: -352,-237
+---
+<<hideBlueOrb GameManager>>
+<<animationBackgroundPlay GameManager LourencoSpeaks 1 8 false 0.5>>
+Os meus recursos na nave, como o oxigénio e a água, estão a acabar. #line:line_8 
+<<animationBackgroundStop GameManager>>
+<<jump rightAnswerFirstDecision>>
+===
+
+title: rightAnswerFirstDecision
+position: -99,-238
+---
+<<hideBlueOrb GameManager>>
+<<animationBackgroundPlay GameManager EarthBuildings 0 16 false 0.6>>
+No ano 2167 a Terra passou por uma catástrofe a nível global. #line:line_9 
+A população mundial aumentou drasticamente e para construirem mais habitações para essas pessoas, precisaram de eliminar a natureza presente. #line:line_10 
+E para alimentar tanta gente, muitos recursos naturais foram explorados de forma exagerada. #line:line_11 
+Com isso, os nossos recursos foram reduzindo e ficando cada vez mais escassos. #line:line_12 
+<<animationBackgroundStop GameManager>>
+<<jump buildingSpaceship>>
+===
+
+title: buildingSpaceship
+position: -118,-68
+---
+// show spaceship building animation
+<<animationBackgroundPlay GameManager BuildingShip 1 6 true 0.3>>
+Como já não havia espaço para plantar árvores começaram a construir naves com tecnologias avançadas. #line:line_13 
+Tinham o propósito de salvar a humanidade das más condições do planeta Terra. #line:line_14 
+<<animationBackgroundStop GameManager>>
+<<jump enteringSpaceship>>
+===
+
+title: enteringSpaceship
+position: 143,-72
+---
+//show people entering spaceship animation
+<<animationBackgroundPlay GameManager EnteringShip 1 14 true 0.6>>
+Infelizmente, não havia espaço suficiente para todos. <br>Por isso, apenas pessoas importantes e especializadas em várias áreas foram aceites a entrar nas naves. #line:line_15 
+Pois estas pessoas eram importantes para garantir um futuro funcional. #line:line_16
+
+<<showBlueOrb GameManager>>
+-> Mas ainda não disseste como te posso ajudar... #line:0a43711 
+    <<jump leftBook>>
+-> Mas para que é que precisas da minha ajuda? #line:01bbdae 
+    <<jump rightBook>>
+===
+
+title: leftBook
+position: 146,145
+---
+<<hideBlueOrb GameManager>>
+<<animationBackgroundStop GameManager>>
+<<changebackground GameManager School 2>>
+Hahaha, verdade... Então, reparaste que te enviei um caderno incompleto? #line:line_17 
+<<jump moreBook>>
+===
+
+title: rightBook
+position: 414,-70
+---
+<<hideBlueOrb GameManager>>
+<<animationBackgroundStop GameManager>>
+<<changebackground GameManager School 2>>
+Como já deves ter reparado, enviei-te um caderno incompleto. Gostava muito que o completasses por mim. #line:line_18 
+<<jump moreBook>>
+===
+
+title: moreBook
+position: 405,145
+---
+<<changebackground GameManager School 2>>
+<<showBlueOrb GameManager>>
+-> Ah, sim... Mas não percebi para que serve<br> ou o que posso fazer com ele... #line:0cbc553 
+    <<jump labExplanation>>
+-> O que é esse caderno? #line:0f0deb8 
+    <<jump bookDetail>>
+===
+
+title: labExplanation
+position: 232,331
+---
+<<hideBlueOrb GameManager>>
+<<changebackground GameManager OpenBook 1>>
+Eu trabalho num laboratório para recriar as espécies de natureza que existem no teu tempo mas que já não existem no meu. #line:line_19 
+<<animationBackgroundPlay GameManager OpenBook 1 5 false 1>>
+É um caderno que tinha muitas informações sobre várias espécies mas entretanto algumas foram se perdendo com o tempo. #line:line_20 
+<<jump bookQuestion>>
+===
+
+title: bookDetail
+position: -6,321
+---
+<<hideBlueOrb GameManager>>
+<<animationBackgroundPlay GameManager OpenBook 1 5 false 1>>
+Este é um caderno que tinha muitas informações sobre várias espécies mas entretanto algumas foram se perdendo com o tempo. #line:line_21 
+<<jump bookQuestion>>
+===
+
+title: bookQuestion
+position: 78,550
+---
+<<animationBackgroundStop GameManager>>
+<<changebackground GameManager OpenBook 5>>
+<<showBlueOrb GameManager>>
+-> Mas se estás a falar comigo, que estou no teu <br>passado, não consegues viajar no tempo? #line:0ce2aec 
+    <<jump timeTravel>>
+-> Ah... Então queres que eu te dê informações<br> para conseguires salvá-las, é isso? #line:0f0cd97 
+    <<jump rightPerson>>
+===
+
+title: timeTravel
+position: 409,631
+---
+<<hideBlueOrb GameManager>>
+<<changebackground GameManager OpenBook 5>>
+A minha "máquina do tempo" ainda não está preparada para transportar pessoas no tempo, apenas pequenos objetos. #line:line_22 
+Daí precisar das informações de alguém do passado, que neste caso, és tu. #line:line_23 
+Eu preciso dessas informações para poder salvar as espécies da natureza. #line:line_24 
+<<jump lastQuestion>>
+===
+
+title: rightPerson
+position: 404,471
+---
+<<hideBlueOrb GameManager>>
+Sim, exatamente! Vês como és a pessoa ideal para me ajudar! #line:line_25 
+<<jump lastQuestion>>
+===
+
+title: lastQuestion
+position: 692,555
+---
+<<changebackground GameManager OpenBook 5>>
+<<showBlueOrb GameManager>>
+-> Mas preciso de saber uma coisa... onde posso <br>encontrar as informações que precisas? #line:03c4166 
+    <<jump detail>>
+-> E como vais conseguir essas informações a partir deste caderno? #line:005912d 
+    <<jump fromthefuture>>
+===
+
+title: detail
+position: 1013,628
+---
+<<hideBlueOrb GameManager>>
+<<changebackground GameManager Gate 1>>
+Ah sim...esqueci-me desse pormenor... #line:line_26 
+<<jump familyConnection>>
+===
+
+title: fromthefuture
+position: 1010,447
+---
+<<hideBlueOrb GameManager>>
+<<changebackground GameManager LourencoBook 1>>
+Não te esqueças que sou do futuro! Hahaha #line:line_27 
+Quando escreveres no caderno no teu tempo automaticamente irá aparecer no caderno que tenho no futuro. #line:line_28 
+
+<<showBlueOrb GameManager>>
+-> E onde posso encontrar as informações que precisas? #line:0b7f7e0 
+    <<jump detail>>
+-> Este caderno é teu? #line:0aa02c3 
+    <<hideBlueOrb GameManager>>
+    É um livro da minha família #line:line_29 
+    <<jump familyConnection>>
+===
+
+title: familyConnection
+position: 1331,505
+---
+<<hideBlueOrb GameManager>>
+<<changebackground GameManager Gate 1>>
+Bem... Resumindo, os meus antepassados viviam na Quinta do Santo da Serra e fizeram este caderno. O qual passou de geração em geração. #line:line_30 
+Existem muitas espécies lá, tanto de animais como de plantas, e isso é muito importante para mim. #line:line_31 
+Ao recriá-las posso garantir um futuro com mais recursos! #line:line_32 
+<<animationBackgroundPlay GameManager LourencoSpeaks 1 8 true 1>>
+Mas como estamos em risco de extinção, o meu pai deu-me o caderno no meu 16º aniversário. #line:line_33 
+Agora preciso que faças o seguinte. #line:line_34 
+Vais até a Quinta do Santo da Serra. #line:line_35 
+Lá vais explorar todos os recantos através do mapa que pus dentro do caderno que te enviei e assim irás poder completar as informações em falta assinaladas. #line:line_36 
+<<animationBackgroundStop GameManager>>
+<<animationBackgroundPlay GameManager LourencoMoves 1 4 true 1>>
+FIM #line:0402751 
+<<jump Start>>
+===

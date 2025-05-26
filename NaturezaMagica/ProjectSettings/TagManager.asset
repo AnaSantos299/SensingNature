@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Collectable
+  - Enemie
+  - WayPoint
+  - Puro
+  - PinkDoor
+  - YellowDoor
+  - BabyBlueDoor
+  - PurpleDoor
+  - GreenDoor
+  - RedDoor
+  - OrangeDoor
+  - DarkBlueDoor
+  - player
+  - Final
+  - PuroMessage
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - WhatIsGround
+  - Water
+  - UI
+  - MiniMap
+  - Environment
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2828753305
+    locked: 0
